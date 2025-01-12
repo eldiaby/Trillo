@@ -45,13 +45,55 @@
             </header>
             <div class="page-content">
                 <nav class="sidebar">
-                    Navigation
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-nav__item sidebar-nav__item--active">
+                            <a href="#" class="sidebar-nav__link">
+                                <svg class="sidebar-nav__icon">
+                                    <use xlink:href="./img/sprite.svg#icon-home"></use>
+                                </svg>
+                                <span class="sidebar-nav__title">Hotel</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav__item">
+                            <a href="#" class="sidebar-nav__link">
+                                <svg class="sidebar-nav__icon">
+                                    <use xlink:href="./img/sprite.svg#icon-aircraft-take-off"></use>
+                                </svg>
+                                <span class="sidebar-nav__title">Flight</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav__item">
+                            <a href="#" class="sidebar-nav__link">
+                                <svg class="sidebar-nav__icon">
+                                    <use xlink:href="./img/sprite.svg#icon-key"></use>
+                                </svg>
+                                <span class="sidebar-nav__title">Car rental</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-nav__item">
+                            <a href="#" class="sidebar-nav__link">
+                                <svg class="sidebar-nav__icon">
+                                    <use xlink:href="./img/sprite.svg#icon-map"></use>
+                                </svg>
+                                <span class="sidebar-nav__title">Tours</span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="legal">
+                        &copy; <span class="year-now">2025</span> by trillo. All rights reserved.
+                    </div>
                 </nav>
                 <main class="hotel-view">
                     Hotel view
                 </main>
             </div>
         </div>
+
+        <!-- Script to set the legal year for the current year -->
+        <script>
+            document.querySelector('.year-now').innerHTML = new Date().getFullYear();
+        </script>
     </body>
 
 </html>
