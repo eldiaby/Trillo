@@ -1,3 +1,5 @@
+@use './variables';
+
 /////////////////////////////////////////////
 /// Logo
 .header__logo {
@@ -13,6 +15,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: variables.$bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+  }
 
   &__input {
     font-family: inherit;
@@ -135,11 +142,25 @@
   padding-left: 0;
   margin-top: 3.5rem;
 
+  @media only screen and (max-width: variables.$bp-medium) {
+    display: flex;
+    margin: 0;
+    // justify-content: space-between;
+  }
+
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: 0.8rem;
+
+      @media only screen and (max-width: variables.$bp-medium) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media only screen and (max-width: variables.$bp-medium) {
+      flex: 1;
     }
   }
 
@@ -175,6 +196,16 @@
     align-items: center;
     position: relative;
     z-index: 2;
+
+    @media only screen and (max-width: variables.$bp-medium) {
+      justify-content: center;
+      padding: 2.4rem;
+    }
+
+    @media only screen and (max-width: variables.$bp-small) {
+      flex-direction: column;
+      padding: 1.5rem 0.5rem;
+    }
   }
 
   &__item:active::before {
@@ -186,6 +217,13 @@
     height: 1.75rem;
     fill: currentColor;
     margin-right: 1.8rem;
+
+    @media only screen and (max-width: variables.$bp-small) {
+      margin-right: 0;
+      margin-bottom: 0.7rem;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 
   &__title {
@@ -200,6 +238,10 @@
   color: var(--color-grey-light-4);
   padding: 2.4rem;
   text-align: center;
+
+  @media only screen and (max-width: variables.$bp-medium) {
+    display: none;
+  }
 }
 
 /////////////////////////////////////////////
@@ -229,6 +271,11 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 1.8rem 3.2rem;
+
+    @media only screen and (max-width: variables.$bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -263,15 +310,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: variables.$bp-small) {
+      padding: 0 1.4rem;
+    }
   }
 
   &__rating-average {
     font-size: 2.2rem;
     font-weight: 300;
     margin-bottom: -0.4rem;
+
+    @media only screen and (max-width: variables.$bp-small) {
+      font-size: 1.8rem;
+    }
   }
   &__rating-count {
     font-size: 1.2rem;
+
+    @media only screen and (max-width: variables.$bp-small) {
+      font-size: 0.8rem;
+    }
   }
 }
 
@@ -382,6 +441,7 @@
   }
 
   &__friends {
+    display: flex;
   }
 
   &__photo {
@@ -405,6 +465,11 @@
   position: relative;
   z-index: 1;
   overflow: hidden;
+
+  @media only screen and (max-width: variables.$bp-medium) {
+    padding: 2rem;
+    margin-bottom: 3rem;
+  }
 
   &__text {
     margin: 0 0 1.8rem 0;
@@ -462,6 +527,10 @@
   padding: 3.5rem 0;
   text-align: center;
   background-color: #fff;
+
+  @media only screen and (max-width: variables.$bp-medium) {
+    padding: 2.4rem;
+  }
 
   &__book-now {
     font-size: 1.8rem;
