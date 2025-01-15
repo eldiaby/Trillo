@@ -282,14 +282,23 @@
   color: var(--color-primary);
   font-size: inherit;
   border-bottom: 1px solid currentColor;
-  padding-bottom: 0.2rem;
+  padding: 0 0 0.2rem 0;
   display: inline-block;
   background-color: transparent;
   cursor: pointer;
   transition: all 0.3s;
 
+  & span {
+    margin-left: 3px;
+    transition: margin-left 0.3s;
+  }
+
   &:hover {
     color: var(--color-grey-dark-1);
+
+    span {
+      margin-left: 8px;
+    }
   }
 
   &:focus {
@@ -382,5 +391,66 @@
     border-radius: 50%;
     margin-left: -1.5rem;
     border: 0.3rem solid #fff;
+  }
+}
+
+/////////////////////////////////////////////
+/// Review
+
+.review {
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3.2rem;
+  margin: 0 0 3.6rem 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  &__text {
+    margin: 0 0 1.8rem 0;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__photo {
+    width: 4.6rem;
+    height: 4.6rem;
+    border-radius: 50%;
+    margin-right: 1.8rem;
+  }
+
+  &__user-box {
+    margin-right: auto;
+  }
+
+  &__user-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  &__user-date {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-grey-dark-3);
+    margin-top: 0;
+  }
+  &__rating {
+    color: var(--color-primary);
+  }
+
+  &::before {
+    content: '\201C';
+    font-size: 20rem;
+    font-family: sans-serif;
+    line-height: 1;
+    color: var(--color-grey-light-3);
+    position: absolute;
+    top: -2.25rem;
+    left: -1rem;
+    z-index: -1;
   }
 }
